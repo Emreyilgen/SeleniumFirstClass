@@ -1,4 +1,4 @@
-package myfirstproject.Day_04;
+package myfirstproject;
 
 import com.github.javafaker.Faker;
 import org.junit.jupiter.api.Test;

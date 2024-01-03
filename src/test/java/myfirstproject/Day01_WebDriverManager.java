@@ -1,4 +1,4 @@
-package myfirstproject.Day_01;
+package myfirstproject;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 import io.github.bonigarcia.wdm.managers.ChromeDriverManager;

@@ -1,6 +1,6 @@
-package myfirstproject.Day_05;
+package myfirstproject;
 
-public class alert_HW {
+public class Day05_Alert_HW {
     /*
     HW: When Navigate to https://testpages.herokuapp.com/styled/windows-test.html
 ØWhen Click on "Alerts In A New Window From JavaScript"

@@ -1,4 +1,4 @@
-package myfirstproject.Day_03;
+package myfirstproject;
 
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;

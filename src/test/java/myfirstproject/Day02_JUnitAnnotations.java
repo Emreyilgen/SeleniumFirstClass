@@ -1,4 +1,4 @@
-package myfirstproject.Day_02;
+package myfirstproject;
 
 import org.junit.jupiter.api.*;
 

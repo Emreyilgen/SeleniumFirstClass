@@ -1,4 +1,4 @@
-package myfirstproject.Day_05;
+package myfirstproject;
 
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;

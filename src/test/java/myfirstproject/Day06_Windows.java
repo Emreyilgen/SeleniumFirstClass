@@ -1,4 +1,4 @@
-package myfirstproject.Day_06;
+package myfirstproject;
 
 import myfirstproject.utilities.TestBase;
 import org.junit.jupiter.api.Test;
@@ -6,7 +6,8 @@ import org.openqa.selenium.By;
 
 import java.util.Set;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertFalse;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
     public class Day06_Windows extends TestBase {
 
