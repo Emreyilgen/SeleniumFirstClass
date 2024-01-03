@@ -60,7 +60,7 @@ public class Day05_Alert extends TestBase {
 //    click on the third alert, verify text "I am a JS Prompt”
         driver.findElement(By.xpath("//button[@onclick='jsPrompt()']")).click(); // clicks on the second button
         Thread.sleep(2000);
-//        At this point, we see an ALERT on the page, we can NOT locate it, we have to handle it by switchto method
+//        At this point, we see an ALERT on the page, we can NOT locate it, we have to handle it by switch to method
 //    type “Hello World”, click OK
         driver.switchTo().alert().sendKeys("Hello World");
         Thread.sleep(2000);
