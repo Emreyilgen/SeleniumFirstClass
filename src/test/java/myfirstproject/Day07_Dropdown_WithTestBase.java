@@ -10,7 +10,7 @@ import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
-public class Day05_Dropdown extends TestBase {
+public class Day07_Dropdown_WithTestBase extends TestBase {
 
     /*
     - Dropdown is a list of webElements
@@ -34,10 +34,20 @@ public class Day05_Dropdown extends TestBase {
         // step 3: Now we have the select object, now we can interact with the dropdown
         selectYear.selectByVisibleText("2000");  // selecting the year by visible text
 
-        // MONTH
+//        // MONTH
         WebElement month = driver.findElement(By.cssSelector("#month"));
         Select selectMonth = new Select(month);
-        selectMonth.selectByValue("6");// selecting month of july by its value
+//        selectMonth.selectByValue("6");// selecting month of july by its value
+
+
+//      selecting month dropdown using REUSABLE MERHODS from testbase ( use any one of the followings)
+        dropdownSelectByIndex(month, 6); // (line38)
+
+        dropdownSelectByIndex(driver.findElement(By.id("#month")), 6);  // locator and index (test base class line 46 method)
+        dropdownSelectByIndex(driver.findElement(By.cssSelector("#month")), 6);  // locator and index (test base class line 46 method)
+
+        dropdownSelectByIndex("//select[@id='month']", 6); // xpath and index (test base class line 52 method)
+
 
         // DAY
         WebElement day = driver.findElement(By.xpath("//select[@id='day']"));
@@ -64,13 +74,6 @@ public class Day05_Dropdown extends TestBase {
         }
     }
 }
-// HOMEWORK: State Test
 
-//    Create a new test method stateTest() in this class
-//    Then print the total number of states from the dropdown
-//    Then print all states from the dropdown
-//    Select 'Texas' option using one f the methods
-//    Assert if 'Texas' is selected or not
-//    Then check if state names are in alphabetical order or not
 
 

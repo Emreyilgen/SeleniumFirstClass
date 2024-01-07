@@ -4,14 +4,12 @@ import myfirstproject.utilities.TestBase;
 import org.junit.jupiter.api.Test;
 import org.openqa.selenium.By;
 
-import java.util.ArrayList;
-import java.util.List;
 import java.util.Set;
 
 import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
-public class Day06_Windows extends TestBase {
+public class Day07_Windows_WithTestBase extends TestBase {
 
     @Test
     public void windowsTest() throws InterruptedException {
@@ -19,7 +17,7 @@ public class Day06_Windows extends TestBase {
 //        Go to https://the-internet.herokuapp.com/windows
         driver.get("https://the-internet.herokuapp.com/windows");
 
-//        Assert if the window 1 title equals “The Internet”
+//        Assert if the window 1 title equals "The Internet"
         assertTrue(driver.getTitle().equals("The Internet"));
         Thread.sleep(2000);
 
@@ -37,42 +35,30 @@ public class Day06_Windows extends TestBase {
         Set<String> allWindowHandles = driver.getWindowHandles();
         System.out.println("allWindowHandles = " + allWindowHandles);  // returns all window handles / hashcodes
 
-//         Use a for each loop to get the second window handle
-        List<String> handleList = new ArrayList<>();  // Create an empty list to store the handles so you can assign Window 2 handle in this list (1st way)
+        // no need to create the loop again because now we have a reusable method
+        // which takes care of the loop
+        switchNewWindowByIndex(1); // switching window by index
+//        switchNewWindowByTitle("New Window");  // switching window by title
 
-        for (String eachHandle : allWindowHandles){
-            if (!eachHandle.equals(window1Handle)){
-                handleList.add(eachHandle); // add Window 2 handle in the empty list that you created above (1st way)
-                driver.switchTo().window(eachHandle);  // at this point, driver will switch to 2nd window
-                break;
-            }
-        }
-
-      //  String window2Handle = handleList.getFirst();
-      //  System.out.println("Window 2 Handle = " + window2Handle);
-
-//        Assert if the window 2 title equals “New Window”
+//        Assert if the window 2 title equals "New Window"
         assertTrue(driver.getTitle().equals("New Window"));
         Thread.sleep(2000);
 
-//        Now that driver is on second window, we can get its handle too (2nd way of getting Window 2 Handle)
-//        String window2Handle = driver.getWindowHandle();
-//        System.out.println("window2Handle = " + window2Handle);
-//        Switch back to window 1 title and assert if URL contains “windows”
-        driver.switchTo().window(window1Handle);
+//
+//        Switch back to window 1 title and assert if URL contains "windows"
+        switchNewWindowByIndex(9);  // using reusable method
+
         Thread.sleep(2000);
         assertTrue(driver.getCurrentUrl().contains("windows"));
-//        And assert if the URL doesn’t contain ‘new’
+//        And assert if the URL doesn't contain 'new'
 //        assertTrue(!driver.getCurrentUrl().contains("new")); // OR
         assertFalse(driver.getCurrentUrl().contains("new"));
 
 //        Switch back to window 2
-     //   driver.switchTo().window(window2Handle);
+        switchNewWindowByIndex(1);
         Thread.sleep(2000);
 
 //        Switch back to window 1
         driver.switchTo().window(window1Handle);
-
-
     }
 }

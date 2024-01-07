@@ -3,11 +3,11 @@ package myfirstproject;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 
-public class FirstSeleniumClass {
+public class Day01_a_FirstSeleniumClass {
     public static void main(String[] args) {
     //1. set tahe path of the driver
         //System.setProperty("what is it", "where is it");
-        System.setProperty("webdriver.chrome.driver", "src/Resources/drivers/chromedriver.exe");
+        System.setProperty("webdriver.chrome.driver", "src/Resources/drivers/chromedriver.exe"); // for windows browser
        // System.setProperty("web-driver.http.factory", "jdk-http-client");
 
     // 2. create the driver
@@ -17,7 +17,6 @@ public class FirstSeleniumClass {
     // 3. Now that driver is ready, automate the function that we want to perform
         driver.get("https://www.google.com/");
     }
-
 
 
 }
